@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RestContraPageRoutingModule } from './rest-contra-routing.module';
+import { RestContrasenaPageRoutingModule } from './rest-contrasena-routing.module';
 
-import { RestContraPage } from './rest-contra.page';
+import { RestContrasenaPage } from './rest-contrasena.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RestContraPageRoutingModule
+    RestContrasenaPageRoutingModule
   ],
-  declarations: [RestContraPage]
+  declarations: [RestContrasenaPage]
 })
-export class RestContraPageModule {}
+export class RestContrasenaPageModule {}
