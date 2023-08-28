@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RestContraPage } from './rest-contra.page';
+import { RestContrasenaPage } from './rest-contrasena.page';
 
-describe('RestContraPage', () => {
-  let component: RestContraPage;
-  let fixture: ComponentFixture<RestContraPage>;
+describe('RestContrasenaPage', () => {
+  let component: RestContrasenaPage;
+  let fixture: ComponentFixture<RestContrasenaPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(RestContraPage);
+    fixture = TestBed.createComponent(RestContrasenaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

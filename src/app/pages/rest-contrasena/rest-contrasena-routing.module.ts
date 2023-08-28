@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RestContraPage } from './rest-contra.page';
+import { RestContrasenaPage } from './rest-contrasena.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: RestContraPage
+    component: RestContrasenaPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class RestContraPageRoutingModule {}
+export class RestContrasenaPageRoutingModule {}
