@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-  async ingresar(){
+  /*async ingresar(){
 
     var f = this.formulariologin.value;
 
@@ -45,7 +45,7 @@ export class LoginPage implements OnInit {
       });
       await alert.present();
     }
-  }
+  }*/
 
   home() {
     this.router.navigate(['home'])
