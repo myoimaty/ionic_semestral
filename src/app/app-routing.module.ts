@@ -18,9 +18,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },  {
+  },
+  {
     path: 'crear-usuario',
-    loadChildren: () => import('./pages/crear-usuario/crear-usuario.module').then( m => m.CrearUsuarioPageModule)
+    loadChildren: () => import('./pages/login/crear-usuario/crear-usuario.module').then( m => m.CrearUsuarioPageModule)
   },
   {
     path: 'rest-contrasena',
