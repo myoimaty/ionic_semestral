@@ -1,0 +1,30 @@
+<ion-card>
+  <img alt="Silhouette of mountains" src="https://aimchile.cl/wp-content/uploads/2022/03/web-b3.png" />
+  <ion-card-header>
+    <div class="centrar">
+      <ion-card-title>Iniciar Sesión</ion-card-title>
+    </div>
+  </ion-card-header>
+
+  <ion-card-content>
+    <form [formGroup]="formulariologin">
+      <ion-item>
+        <ion-input formControlNAme="nombre" type="email" label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlNAme="password" type="password" label="Contraseña" labelPlacement="floating" placeholder="Ingrese contraseña"></ion-input>
+      </ion-item>
+    </form>
+
+  </ion-card-content>
+  <div class="centrar">
+    <ion-button color="success" (click)="home()">Ingresar</ion-button>
+    <ion-buttons>
+      <ion-button [routerLink]="['/crear-usuario']">Registrar</ion-button>
+    </ion-buttons>
+    
+  </div>
+  <div class="centrar">
+    <ion-button fill="clear" (click)="restaurar()">Olvide contraseña</ion-button>
+  </div>
+</ion-card>
