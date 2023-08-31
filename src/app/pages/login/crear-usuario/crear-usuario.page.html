@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Registro</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-input #usuario type="email" label="Usuario" labelPlacement="floating" placeholder="Ej: john.doe@duocuc.cl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input #password type="password" label="Contraseña" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input #confirmarPassword type="password" label="Confirmar contraseña" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-button color="secondary" (click)="addUsuario(usuario, password, confirmarPassword)">Registrarse</ion-button>
+  </ion-card-content>
+</ion-card>
+  
+</ion-content>

@@ -15,20 +15,18 @@
     </ion-card-header>
   
     <ion-card-content>
-      <form [formGroup]="formulariologin">
-        <ion-item>
-          <ion-input formControlNAme="nombre" type="email" label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input formControlNAme="password" type="password" label="Contraseña" labelPlacement="floating" placeholder="Ingrese contraseña"></ion-input>
-        </ion-item>
-      </form>
+      <ion-item>
+        <ion-input formControlNAme="nombre" type="email" label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlNAme="password" type="password" label="Contraseña" labelPlacement="floating" placeholder="Ingrese contraseña"></ion-input>
+      </ion-item>
 
     </ion-card-content>
     <div class="centrar">
       <ion-button color="success" (click)="home()">Ingresar</ion-button>
       <ion-buttons>
-        <ion-button [routerLink]="['/crear-usuario']">Registrar</ion-button>
+        <ion-button (click)="registrar()">Registrar</ion-button>
       </ion-buttons>
       
     </div>
