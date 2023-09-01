@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'rest-contrasena',
     loadChildren: () => import('./pages/rest-contrasena/rest-contrasena.module').then( m => m.RestContrasenaPageModule)
+  },  {
+    path: 'asistencias',
+    loadChildren: () => import('./pages/asistencias/asistencias.module').then( m => m.AsistenciasPageModule)
   }
+
 
 
 ];
