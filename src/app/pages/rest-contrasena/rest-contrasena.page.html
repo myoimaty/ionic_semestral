@@ -17,13 +17,13 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>Recupera tu contraseña</ion-card-title>
-      <div class="centrar">Ingresa tu correo para recuperar tu contraseña</div>
     </ion-card-header>
+    <div class="centrar">Ingresa tu correo para recuperar tu contraseña</div>
     <ion-card-content>
       <ion-item>
         <ion-input class="centrar" #usuario type="email" label="email" labelPlacement="floating" placeholder="Ej: john.doe@duocuc.cl"></ion-input>
       </ion-item>
-      <ion-button class="centrar" color="secondary" >Enviar</ion-button>
+      <ion-button (click)="mensaje()" class="centrar" color="secondary" >Enviar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

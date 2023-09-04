@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-rest-contrasena',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestContrasenaPage implements OnInit {
 
-  constructor() { }
+  constructor(private toastController: ToastController) { }
 
   ngOnInit() {
+  }
+
+  async mensajeToast(mensaje: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 2000,
+      position: 'bottom',
+    })
+    toast.present()
+  }
+
+  mensaje(){
+    this.mensajeToast("correo enviado");
   }
 
 }
