@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -7,8 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent  implements OnInit {
 
-  constructor() { }
+  @Input() mostrarHeader: boolean = true;
+  @Input() mostrarBoton: boolean = true;
+
+  @Input() titulo!: string;
+  @Input() fecha!: string;
+  @Input() descripcion!: string;
+  @Input() cantidad: number = 0;
+
+  timesArray(n: number): any[] {
+    return Array(n);
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
+  home() {
+    this.router.navigate(['/home']);
+  }
+
+  registrar() {
+    this.router.navigate(['/crear-usuario']);
+  }
 }

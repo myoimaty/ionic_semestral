@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>home</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,35 +14,35 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-button fill="outline" color="warning" expand="full">
+        <ion-button (click)="asistencia()" fill="outline" color="secondary" expand="full">
           <ion-label>Arquitectura</ion-label>
         </ion-button>
-        <ion-button fill="outline" color="warning" expand="full">
+        <ion-button (click)="asistencia()" fill="outline" color="secondary" expand="full">
           <ion-label>Calidad de software</ion-label>
         </ion-button>
-        <ion-button fill="outline" color="warning" expand="full">
+        <ion-button (click)="asistencia()" fill="outline" color="secondary" expand="full">
           <ion-label>Estadistica descriptiva</ion-label>
         </ion-button>
-        <ion-button fill="outline" color="warning" expand="full">
+        <ion-button (click)="asistencia()" fill="outline" color="secondary" expand="full">
           <ion-label>Etica para el Trabajo</ion-label>
         </ion-button>
-        <ion-button fill="outline" color="warning" expand="full">
+        <ion-button (click)="asistencia()" fill="outline" color="secondary" expand="full">
           <ion-label>Ingles intermedio</ion-label>
         </ion-button>
-        <ion-button fill="outline" color="warning" expand="full">
+        <ion-button (click)="asistencia()" fill="outline" color="secondary" expand="full">
           <ion-label>Proceso de portafolio</ion-label>
         </ion-button>
-        <ion-button fill="outline" color="warning" expand="full">
+        <ion-button (click)="asistencia()" fill="outline" color="secondary" expand="full">
           <ion-label>Prog. Apps mobiles</ion-label>
         </ion-button>
       </ion-list>
     </ion-card-content>
   </ion-card>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <!--<ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button>
       <ion-icon name="qr-code-outline"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab>-->
 
 </ion-content>

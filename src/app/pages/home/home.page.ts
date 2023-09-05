@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(private toastController: ToastController, private router: Router) { }
 
   ngOnInit() {
   }
 
+  asistencia() {
+    this.router.navigate(['asistencias'])
+  }
 }

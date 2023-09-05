@@ -28,6 +28,6 @@ export class CrearUsuarioPage implements OnInit {
   addUsuario(usuario: any, password: any, confirmarPassword: any) {
     this.loginService.addUsuario(usuario.value, password.value, confirmarPassword.value);
     this.mensajeToast("Usuario Creado");
-    this.router.navigate(['/login']);
+    //this.router.navigate(['/login']);
   }
 }

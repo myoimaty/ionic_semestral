@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Login</ion-title>
+    <ion-button slot="end" size="small" fill="clear" (click)="restaurar()">docentes</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -24,15 +25,20 @@
 
     </ion-card-content>
     <div class="centrar">
-      <ion-button color="success" (click)="home()">Ingresar</ion-button>
-      <ion-buttons>
-        <ion-button (click)="registrar()">Registrar</ion-button>
-      </ion-buttons>
-      
+      <ion-button  color="secondary" shape="round" (click)="home()">Ingresar</ion-button>
     </div>
     <div class="centrar">
-      <ion-button fill="clear" (click)="restaurar()">Olvide contraseña</ion-button>
+      <ion-button color="secondary" shape="round" (click)="registrar()">Registrar</ion-button>
     </div>
+    
   </ion-card>
+  
 
 </ion-content>
+<ion-footer >
+  <div class="centrar">
+    <ion-button size="small" fill="clear" (click)="restaurar()">Recuperar contraseña</ion-button> 
+    
+  </div>
+  
+</ion-footer>
