@@ -29,6 +29,10 @@ const routes: Routes = [
   },  {
     path: 'asistencias',
     loadChildren: () => import('./pages/asistencias/asistencias.module').then( m => m.AsistenciasPageModule)
+  },
+  {
+    path: 'login-docentes',
+    loadChildren: () => import('./pages/login-docentes/login-docentes.module').then( m => m.LoginDocentesPageModule)
   }
 
 
