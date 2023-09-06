@@ -17,26 +17,27 @@
     </ion-card-header>
   
     <ion-card-content>
-      <form [formGroup]="myForm">
-        <!-- Usuario -->
+      <form [formGroup]="formularioLogin" (ngSubmit)="ingresar()">
         <ion-item>
-          <ion-input type="email" formControlName="usuario" label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
         </ion-item>
-        <!-- Contraseña -->
         <ion-item>
-          <ion-input type="password" formControlName="contrasena" label="Contraseña" labelPlacement="floating" placeholder="Ingrese contraseña"></ion-input>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
         </ion-item>
       </form>
-
     </ion-card-content>
     <div class="centrar">
-      <ion-button  color="secondary" shape="round" (click)="home()">Ingresar</ion-button>
+      <ion-button  color="secondary" shape="round" (click)="ingresar()">Ingresar</ion-button>
     </div>
     <div class="centrar">
       <ion-button color="secondary" shape="round" (click)="registrar()">Registrar</ion-button>
     </div>
     
   </ion-card>
+
+  
   
 
 </ion-content>

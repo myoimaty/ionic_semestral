@@ -14,16 +14,18 @@
     <ion-card-title>Registro</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <ion-item>
-      <ion-input #usuario type="email" label="Usuario" labelPlacement="floating" placeholder="Ej: john.doe@duocuc.cl" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input #password type="password" label="Contraseña" labelPlacement="floating" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input #confirmarPassword type="password" label="Confirmar contraseña" labelPlacement="floating" required></ion-input>
-    </ion-item>
-    <ion-button color="secondary" (click)="addUsuario(usuario, password, confirmarPassword)">Registrarse</ion-button>
+    <form [formGroup]="formularioRegistro" (ngSubmit)="guardar()">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button type="submit">Registrarse</ion-button>
+    </form>
   </ion-card-content>
 </ion-card>
   
