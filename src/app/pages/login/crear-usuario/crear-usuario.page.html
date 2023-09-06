@@ -15,13 +15,13 @@
   </ion-card-header>
   <ion-card-content>
     <ion-item>
-      <ion-input #usuario type="email" label="Usuario" labelPlacement="floating" placeholder="Ej: john.doe@duocuc.cl"></ion-input>
+      <ion-input #usuario type="email" label="Usuario" labelPlacement="floating" placeholder="Ej: john.doe@duocuc.cl" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input #password type="password" label="Contraseña" labelPlacement="floating"></ion-input>
+      <ion-input #password type="password" label="Contraseña" labelPlacement="floating" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input #confirmarPassword type="password" label="Confirmar contraseña" labelPlacement="floating"></ion-input>
+      <ion-input #confirmarPassword type="password" label="Confirmar contraseña" labelPlacement="floating" required></ion-input>
     </ion-item>
     <ion-button color="secondary" (click)="addUsuario(usuario, password, confirmarPassword)">Registrarse</ion-button>
   </ion-card-content>

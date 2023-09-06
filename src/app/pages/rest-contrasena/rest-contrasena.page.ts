@@ -22,8 +22,15 @@ export class RestContrasenaPage implements OnInit {
     toast.present()
   }
 
-  mensaje(){
-    this.mensajeToast("correo enviado");
+  mensaje(usuario: any) {
+    const usuarioValue = usuario.value; // Obtener el valor del campo de correo electrónico
+    if (!usuarioValue) {
+      // Mostrar un mensaje de error si el campo está vacío
+      this.mensajeToast("Por favor, ingrese su correo antes de enviar.");
+    } else {
+      // Mostrar el mensaje de éxito si el campo tiene un valor
+      this.mensajeToast("Correo enviado.");
+    }
   }
 
 }

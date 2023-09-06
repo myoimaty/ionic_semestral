@@ -10,6 +10,5 @@ export class AppComponent {
     { title: 'Perfil', icon: 'person-circle' },
     { title: 'Cerrar Sesión', url: 'login', icon: 'log-out' },
   ];
-  public labels = [];
   constructor() {}
 }

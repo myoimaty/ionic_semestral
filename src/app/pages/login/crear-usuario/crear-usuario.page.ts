@@ -26,6 +26,14 @@ export class CrearUsuarioPage implements OnInit {
   }
   
   addUsuario(usuario: any, password: any, confirmarPassword: any) {
+    const usuarioValue = usuario.value;
+    const passwordValue = password.value;
+    const confirmarPasswordValue = confirmarPassword.value;
+
+    if (!usuarioValue || !passwordValue || !confirmarPasswordValue) {
+      this.mensajeToast('Por favor, complete todos los campos obligatorios.');
+      return; // Evita continuar si falta algún campo
+    }
     this.loginService.addUsuario(usuario.value, password.value, confirmarPassword.value);
     this.mensajeToast("Usuario Creado");
     //this.router.navigate(['/login']);

@@ -21,9 +21,9 @@
     <div class="centrar">Ingresa tu correo para recuperar tu contraseña</div>
     <ion-card-content>
       <ion-item>
-        <ion-input class="centrar" #usuario type="email" label="email" labelPlacement="floating" placeholder="Ej: john.doe@duocuc.cl"></ion-input>
+        <ion-input class="centrar" #usuario type="email" label="email" labelPlacement="floating" placeholder="Ej: john.doe@duocuc.cl" required></ion-input>
       </ion-item>
-      <ion-button (click)="mensaje()" class="centrar" color="secondary" >Enviar</ion-button>
+      <ion-button (click)="mensaje(usuario)" class="centrar" color="secondary" >Enviar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
