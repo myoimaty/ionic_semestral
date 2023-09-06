@@ -24,5 +24,8 @@ export class LoginPage implements OnInit {
   restaurar() {
     this.router.navigate(['rest-contrasena'])
   }
+  docentes() {
+    this.router.navigate(['login-docentes'])
+  }
 
 }

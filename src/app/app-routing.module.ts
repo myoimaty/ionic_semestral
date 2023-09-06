@@ -33,6 +33,18 @@ const routes: Routes = [
   {
     path: 'login-docentes',
     loadChildren: () => import('./pages/login-docentes/login-docentes.module').then( m => m.LoginDocentesPageModule)
+  },
+  {
+    path: 'homedocente',
+    loadChildren: () => import('./pages/homedocente/homedocente.module').then( m => m.HomedocentePageModule)
+  },
+  {
+    path: 'asis-docente',
+    loadChildren: () => import('./pages/asis-docente/asis-docente.module').then( m => m.AsisDocentePageModule)
+  },
+  {
+    path: 'gen-qr',
+    loadChildren: () => import('./pages/gen-qr/gen-qr.module').then( m => m.GenQRPageModule)
   }
 
 

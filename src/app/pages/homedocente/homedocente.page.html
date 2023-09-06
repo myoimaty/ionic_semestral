@@ -1,13 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Docentes</ion-title>
+    <ion-title>docentes</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <app-card [ingresardocente]="true" [mostrarBoton]="false" [mostrarREgistrar]="false"></app-card>
+<ion-content [fullscreen]="true">
+  <app-clases></app-clases>
 </ion-content>
-

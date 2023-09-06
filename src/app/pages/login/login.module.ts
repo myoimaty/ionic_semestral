@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+import { CardComponent } from 'src/app/components/card/card.component';
 
 @NgModule({
   imports: [

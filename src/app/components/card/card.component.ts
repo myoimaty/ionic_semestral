@@ -10,11 +10,9 @@ export class CardComponent  implements OnInit {
 
   @Input() mostrarHeader: boolean = true;
   @Input() mostrarBoton: boolean = true;
+  @Input() ingresardocente: boolean = true;
+  @Input() mostrarREgistrar: boolean = true;
 
-  @Input() titulo!: string;
-  @Input() fecha!: string;
-  @Input() descripcion!: string;
-  @Input() cantidad: number = 0;
 
   timesArray(n: number): any[] {
     return Array(n);
@@ -30,5 +28,8 @@ export class CardComponent  implements OnInit {
 
   registrar() {
     this.router.navigate(['/crear-usuario']);
+  }
+  homedocente() {
+    this.router.navigate(['/homedocente']);
   }
 }
