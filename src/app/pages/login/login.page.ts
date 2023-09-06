@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
-import { ToastController } from '@ionic/angular';
-=======
 import { AlertController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service'; // Importa AuthService desde la ubicación correcta
->>>>>>> 20ccc6bcf04948e7a2d97dd1051fd02a843f275f
 
 @Component({
   selector: 'app-login',
@@ -17,32 +12,6 @@ import { AuthService } from '../../services/auth.service'; // Importa AuthServic
 export class LoginPage implements OnInit {
   formularioLogin: FormGroup;
 
-<<<<<<< HEAD
-  myForm: FormGroup;
-
-  constructor(private router: Router, private formBuilder: FormBuilder, private toastController: ToastController) {
-    this.myForm = this.formBuilder.group({
-      usuario: ['', [Validators.required, Validators.email]],
-      contrasena: ['', Validators.required],
-    });
-  }
-
-  ngOnInit() {
-  }
-
-  async home() {
-    if (this.myForm.valid) {
-      // Realizar la navegación a la página "home"
-      this.router.navigate(['home']);
-    } else {
-      // Mostrar un Toast de error
-      const toast = await this.toastController.create({
-        message: 'Por favor, complete todos los campos correctamente.',
-        duration: 3000, // Duración del Toast en milisegundos
-        position: 'top', // Posición del Toast
-      });
-      toast.present();
-=======
   constructor(
     private router: Router,
     private alertController: AlertController,
@@ -73,7 +42,6 @@ export class LoginPage implements OnInit {
       });
 
       await alert.present();
->>>>>>> 20ccc6bcf04948e7a2d97dd1051fd02a843f275f
     }
   }
 
