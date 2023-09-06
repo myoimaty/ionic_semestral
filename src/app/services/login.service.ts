@@ -11,13 +11,13 @@ export class LoginService {
       id:'1',
       usuario: 'john.doe@duocuc.cl',
       password: '123',
-      confirmarPassword: '123',
+ 
     },
     {
       id:'2',
       usuario: 'xd@duocuc.cl',
       password: '123',
-      confirmarPassword: '123',
+
     }
   ]
 
@@ -25,9 +25,15 @@ export class LoginService {
 
   //METODOS CUSTOM
   //METODO QUE AGREGA UN USUARIO
-  addUsuario(usuario: string, password: string, confirmarPassword: string) {
+  addUsuario(usuario: string, password: string) {
+    // Generar un nuevo ID único
+    const newId = (this.login.length + 1).toString();
+    
+    // Agregar el nuevo usuario con el ID generado
     this.login.push({
-      usuario, password, confirmarPassword, id: this.login.length + 1 + ""
-    })
+      id: newId,
+      usuario,
+      password,
+    });
   }
 }
