@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuariosrandomService } from 'src/app/services/usuariosrandom.service';
+
+/*
 import { AlertController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service'; // Importa AuthService desde la ubicación correcta
+
+*/
 
 @Component({
   selector: 'app-login',
@@ -10,39 +16,39 @@ import { AuthService } from '../../services/auth.service'; // Importa AuthServic
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  formularioLogin: FormGroup;
+
+  // DECLARACIÓN
+  loginForm: FormGroup  // PARA VALIDAR EL FORMULARIO
+  user: any           // PARA CAPTURAR TODA LA INFO DEL USUARIORANDOM
+  emailValue?: string // PARA CAPTURAR EL EMAIL DEL USUARIORANDOM
+  passValue?: string  // PARA CAPTURAR LA PASS DEL USUARIORANDOM
 
   constructor(
     private router: Router,
-    private alertController: AlertController,
-    public fb: FormBuilder,
-    private authService: AuthService // Inyecta AuthService aquí
-  ) {
-    this.formularioLogin = this.fb.group({
-      nombre: ['', Validators.required],
-      password: ['', Validators.required],
-    });
+    private usuariosrandom : UsuariosrandomService,
+    private formBuilder: FormBuilder
+  ) { 
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    })
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.usuariosrandom.getRandomUser().subscribe(
+      (data) => {
+        //console.log(data)
+        this.user = data.results[0] // RELLENAMOS EL USUARIO
+        this.emailValue = this.user.email
+        this.passValue = this.user.login.password
+      })
+  }
 
-  async ingresar() {
-    const { nombre, password } = this.formularioLogin.value;
 
-    const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
 
-    if (storedUser.nombre === nombre && storedUser.password === password) {
-      console.log('Ingresado');
-      this.router.navigate(['home']);
-    } else {
-      const alert = await this.alertController.create({
-        header: 'Datos Incorrectos',
-        message: 'Los datos que ingresaste son incorrectos',
-        buttons: ['Aceptar'],
-      });
 
-      await alert.present();
-    }
+  ingresar() {
+    this.router.navigate(['home']);
   }
 
   registrar() {
@@ -56,4 +62,7 @@ export class LoginPage implements OnInit {
   docentes() {
     this.router.navigate(['login-docentes']);
   }
+
+
+  
 }

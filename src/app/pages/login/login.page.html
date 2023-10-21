@@ -16,20 +16,28 @@
       </div>
     </ion-card-header>
   
-    <ion-card-content>
-      <form [formGroup]="formularioLogin" (ngSubmit)="ingresar()">
+    <ion-card-content [formGroup]="loginForm">
         <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
+          <ion-input [(ngModel)]="emailValue" formControlName="email" type="email" errorText="Correo inválido" label="Usuario" labelPlacement="floating" placeholder="Ej: duoc"></ion-input>
         </ion-item>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">
+          El correo es requerido.
+        </ion-text>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
+          El correo es inválido.
+        </ion-text>
         <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="password" type="password"></ion-input>
+          <ion-input [(ngModel)]="passValue" formControlName="password" type="password" label="Contraseña" labelPlacement="floating" placeholder="Ej: 1234"></ion-input>
         </ion-item>
-      </form>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('required')">
+          La contraseña es requerido.
+        </ion-text>
+        <ion-text position="stacked" color="danger" *ngIf="loginForm.get('password')?.hasError('minlength')">
+          La contraseña debe tener al menos 6 caracteres.
+        </ion-text>
     </ion-card-content>
     <div class="centrar">
-      <ion-button  color="secondary" shape="round" (click)="ingresar()">Ingresar</ion-button>
+      <ion-button [disabled]="!loginForm.valid" color="secondary" shape="round" (click)="ingresar()">Ingresar</ion-button>
     </div>
     <div class="centrar">
       <ion-button color="secondary" shape="round" (click)="registrar()">Registrar</ion-button>
